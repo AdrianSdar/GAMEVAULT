@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A personal game portfolio and reviews for each game.">
+    <script type="module" src="main.js"></script>
+    <title>Gamevault</title>
+</head>
+<body>
+    <header>
+        <a href="#games" id="logo">GAMEVAULT</a>
+        <nav>
+            <ul>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" type="button" aria-label="Toggle light/dark theme">Theme</button>
+    </header>
+
+    <main>
+        <section id="games">
+            <h1>Adrian Shayesteh Dar</h1>
+            <p>A personal showcase of my favorite games and reviews for each one.</p>
+
+            <article id="featured">
+                <figure>
+                    <img src="rdr2.png" alt="Arthur Morgan">
+                    <figcaption>Red Dead Redemption 2</figcaption>
+                </figure>
+                <h2>Red Dead Redemption 2</h2>
+                <p>Summary about the game.</p>
+                <p>5.0 (62 hrs)</p>
+                <a href="#game-rdr2">Explore review</a>
+            </article>
+
+            <form id="toolbar" role="search">
+                <label for="search">Search</label>
+                <input id="search" type="search" placeholder="Search">
+                <ul id="filters">
+                    <li><button type="button" data-filter="all">All</button></li>
+                    <li><button type="button" data-filter="open world">Open world</button></li>
+                    <li><button type="button" data-filter="shooter">Shooter</button></li>
+                    <li><button type="button" data-filter="favorites">Favorites</button></li>
+                </ul>
+            </form>
+
+            <ul id="game-grid"></ul>
+            <p id="empty-message" hidden>No games match your search.</p>
+        </section>
+
+        <section id="detail" hidden>
+            <h2 id="detail-title">Game title</h2>
+            <ul role="tablist">
+                <li role="presentation"><button role="tab" id="t1" aria-selected="true" aria-controls="p1" tabindex="0">Info</button></li>
+                <li role="presentation"><button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Review</button></li>
+                <li role="presentation"><button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Screenshots</button></li>
+            </ul>
+            <section role="tabpanel" id="p1" aria-labelledby="t1">Info about the game</section>
+            <section role="tabpanel" id="p2" aria-labelledby="t2" hidden>Reasoning about the review</section>
+            <section role="tabpanel" id="p3" aria-labelledby="t3" hidden>Screenshots</section>
+            <a href="#games">Back to games</a>
+        </section>
+
+        <section id="about" hidden>
+            <h1>Adrian Shayesteh Dar</h1>
+            <p>Longer summary about myself.</p>
+        </section>
+
+        <section id="contact" hidden>
+            <h1>Contact me</h1>
+            <form id="contact-form">
+                <label>Your full name <input type="text" name="name" placeholder="e.g. Arthur Morgan" required></label>
+                <label>Email <input type="email" name="email" placeholder="e.g. arthur@gmail.com" required></label>
+                <label>Subject
+                    <select name="subject">
+                        <option value="">Choose a subject</option>
+                        <option value="question">General question</option>
+                        <option value="review">Review request</option>
+                        <option value="bug">Report a bug</option>
+                    </select>
+                </label>
+                <label>Message <textarea name="message" required></textarea></label>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="form-status" role="status"></p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="mailto:adrian.s.dar05@gmail.com">adrian.s.dar05@gmail.com</a>
+    </footer>
+</body>
+</html>
