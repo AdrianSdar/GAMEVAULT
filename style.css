@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #121824;
+    --secondary-color: #10B981;
+    --text-color: #FFFFFF;
+}
+
+[data-theme="light"] {
+    --primary-color: #FFFFFF;
+    --secondary-color: #10B981;
+    --text-color: #121824;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+@media (prefers-reduced-motion: reduce){
+    * {
+        transition: none;
+    }
+}
