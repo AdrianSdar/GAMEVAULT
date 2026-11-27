@@ -14,7 +14,7 @@ body {
     margin: 0;
     background-color: var(--primary-color);
     color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 ul {
@@ -45,8 +45,139 @@ main {
     padding: 0 1em;
 }
 
+h1 {
+    margin-bottom: 0.2em;
+}
+
+#featured {
+    position: relative;
+    margin: 2em 0;
+    padding: 1.5em;
+    border-radius: 12px;
+    background-color: rgba(128, 128, 128, 0.15);
+}
+
+#featured figure {
+    margin: 0 0 1em 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+figcaption {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+#toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.5em;
+}
+
+#search {
+    padding: 0.6em 1em;
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0;
+}
+
+button {
+    padding: 0.5em 1em;
+    border: 2px solid var(--secondary-color);
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover, button:focus-visible {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+#game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5em;
+    margin: 0;
+}
+
+#game-grid article {
+    height: 100%;
+    padding: 1em;
+    border-radius: 12px;
+    background-color: rgba(128, 128, 128, 0.15);
+    transition: transform 0.3s;
+}
+
+#game-grid article:hover {
+    transform: scale(1.05);
+}
+
+#game-grid figure {
+    margin: 0 0 1em 0;
+}
+
+#game-grid h3 {
+    margin: 0.3em 0;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-family: "space-meatball", sans-serif;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding: 2em;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 0.8em;
+    }
+
+    #toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
 @media (prefers-reduced-motion: reduce){
     * {
-        transition: none;
+        transition: none !important;
     }
+}
+
+@font-face {
+  font-family: "space-meatball";
+  src: url("space-meatball.otf") format("opentype");
+  font-display: swap;
 }
